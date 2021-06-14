@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>LOGIN</title>
+  <h1 align="center">LOGIN</h1>
+	<script>
+		function show()
+		 {
+        
+      var dotpos,atpos;
+      var emailid=document.vasee.Email.value;
+      atpos=emailid.indexOf("@");
+      dotpos=emailid.indexOf(".");
+      if (dotpos-atpos<2) {
+        alert("please enter a valid Email");
+        return false;
+        
+      }
+          
+          if (document.vasee.Mobile.value==""||isNaN(document.vasee.Mobile.value)||document.vasee.Mobile.value.length!=10)
+          {
+          	alert("please enter a valid number");
+          	document.vasee.Mobile.focus();
+          	return false;
+        }
+        if (document.vasee.word.value=="")
+          {
+            alert("please enter a Password");
+            document.vasee.word.focus();
+            return false;
+          }
+    
+          return true;
+		}
+	</script>
+</head>
+<body>
+     <form  action="file:///C:/Users/DELL/Desktop/vaseema/CANDIDATE.html" name="vasee" onsubmit="return(show())">
+     	<table align="center" border="3">
+        <tr><td>Email</td><td><input type="text" name="Email"></td></tr>
+     		<tr><td>Mobile no</td><td><input type="no" name="Mobile"></td></tr>
+        <tr><td>Password</td><td><input type="Password" name="word"></td></tr>
+          <tr><th colspan="2"><input type="submit" value="LOGIN" class="btn btn-success btn-block"></td></tr>
+     	</table>
+     	
+     </form>
+</body>
+</html>
