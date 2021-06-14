@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Home</title>
+  <h1 align="center">REGISTER</h1>
+	<script>
+		function show()	
+		 {
+          if (document.vasee.user.value=="") {
+          	alert("please enter your name");
+          	document.vasee.user.focus();
+          	return false;
+          } 
+
+          if (document.vasee.dob.value=="") {
+            alert("please enter dob");
+            document.vasee.dob.focus();
+            return false;
+          }
+          if (document.vasee.word.value=="")
+          {
+          	alert("please enter a Password");
+          	document.vasee.word.focus();
+          	return false;
+          }
+          if (document.vasee.Mobile.value==""||isNaN(document.vasee.Mobile.value)||document.vasee.Mobile.value.length!=10)
+          {
+          	alert("please enter a valid number");
+          	document.vasee.Mobile.focus();
+          	return false;
+          }
+          if (document.vasee.Gender[0].checked==false && document.vasee.Gender[1].checked==false)
+           {
+           	alert("please select the Gender");
+           	return false;
+           }
+           if (document.vasee.Country.value=="select") 
+           {
+           	alert("please select a Country");
+           	return false;
+           }
+          {
+      var dotpos,atpos;
+      var emailid=document.vasee.Email.value;
+      atpos=emailid.indexOf("@");
+      dotpos=emailid.indexOf(".");
+      if (dotpos-atpos<2) {
+        alert("please enter a valid Email");
+        return false;
+        
+      }
+    }
+
+          return true;
+		}
+		
+	</script>
+</head>
+<body>
+     <form name="vasee" onsubmit="return(show())" action="/LOGIN.html">
+     	<table align="center" border="3" height="500" width="300">
+     		<tr><td>Name</td><td><input type="text" name="user"></td></tr>
+        <tr><td>DOB</td><td><input type="date" name="dob"></td></tr>
+     		<tr><td>Password</td><td><input type="Password" name="word"></td></tr>
+     		<tr><td>Mobile no</td><td><input type="no" name="Mobile"></td></tr>
+     		<tr><td>Gender</td><td><input type="radio" name="Gender">male<input type="radio" name="Gender">female</td></tr>
+            <tr><td>Email</td><td><input type="text" name="Email"></td></tr>
+            <tr><th colspan="2"><input type="submit" name="Register" ></td></tr>
+     	</table>
+     	
+     </form>
+</body>
+</html>
